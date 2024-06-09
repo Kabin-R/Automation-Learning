@@ -27,11 +27,11 @@ time.sleep(2)
 driver.find_element(by=By.NAME, value='message').send_keys('No')
 time.sleep(3)
 
-driver.find_element(by=By.XPATH, value='//*[@id="recaptcha-anchor"]/div[4]').click()
-time.sleep(3)
+title = driver.title
+url=driver.current_url
+page_source = driver.page_source
 
-
-Project_title = driver.title
-print(f'The title is {Project_title}')
-
+print(f'Title={title}')
+print(f'url={url}')
+print(f'page_source={page_source}')
 driver.close()
